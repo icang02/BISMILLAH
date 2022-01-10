@@ -2,14 +2,15 @@
 include 'koneksi.php';
 
 if (isset($_POST['tambah'])) {
+    $nim = $_POST['nim'];
+    $nama = $_POST['nama'];
+    $alamat = $_POST['alamat'];
+    $agama = $_POST['agama'];
 
-    $judul = $_POST['judul'];
-    $penulis = $_POST['penulis'];
-    $harga = $_POST['harga'];
-
-    $sql = "INSERT INTO buku values ('', '$judul', '$penulis', $harga)";
+    $sql = "INSERT INTO tb_mhs VALUES ('', '$nim', '$nama', '$alamat', '$agama')";
     mysqli_query($koneksi, $sql);
-    header("location:index.php");
+
+    header("Location: index.php");
 }
 
 ?>
@@ -25,34 +26,38 @@ if (isset($_POST['tambah'])) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Halaman Index</title>
+    <title>Final | Web</title>
 </head>
 
-<body>
+<body class="container">
 
+    <form action="" method="post">
+        <h1 class="text-center mb-4">Update</h1>
 
-    <div class="container w-50">
-        <h1 class="text-center">Halaman Tambah Data</h1>
-        <a href="index.php" class="btn btn-primary mb-4">kembali</a>
-        <form action="" method="POST">
+        <div class="mb-3">
+            <label for="nim" class="form-label">NIM</label>
+            <input type="password" class="form-control" id="nim" name="nim" value="">
+        </div>
 
-            <label for="Judul" class="form-label">Judul Buku</label>
-            <input type="text" class="form-control" id="Judul" name="judul" required>
+        <div class="mb-3">
+            <label for="nim" class="form-label">Nama</label>
+            <input type="password" class="form-control" id="nim" name="nama">
+        </div>
 
-            <label for="penulis" class="form-label">Penulis</label>
-            <input type="text" class="form-control" id="penulis" name="penulis" required>
+        <div class="mb-3">
+            <label for="nim" class="form-label">Alamat</label>
+            <input type="password" class="form-control" id="nim" name="alamat">
+        </div>
 
-            <label for="harga" class="form-label">Harga</label>
-            <input type="number" class="form-control" id="harga" name="harga" required>
+        <div class="mb-3">
+            <label for="nim" class="form-label">Agama</label>
+            <input type="password" class="form-control" id="nim" name="agama">
+        </div>
 
-            <button type="submit" class="btn btn-primary mt-3" name="tambah">tambah</button>
-            <button type="reset" class="btn btn-danger mt-3">reset</button>
+        <button type="submit" class="btn btn-primary" name="tambah">Tambah</button>
+        <button type="reset" class="btn btn-danger">Reset</button>
+    </form>
 
-
-
-        </form>
-
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
