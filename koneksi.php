@@ -1,7 +1,8 @@
 <?php
-$localhost = 'localhost';
-$username  = 'root';
-$password = '';
-$db = 'db_bismillah';
 
-$koneksi = mysqli_connect($localhost, $username, $password, $db);
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$db = 'db_kampus';
+
+$koneksi = mysqli_connect($host, $username, $password, $db);
